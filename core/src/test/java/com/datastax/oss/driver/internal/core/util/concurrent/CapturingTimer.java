@@ -52,7 +52,7 @@ public class CapturingTimer implements Timer {
    */
   public CapturedTimeout getNextTimeout() {
     try {
-      return timeoutQueue.poll(100, TimeUnit.MILLISECONDS);
+      return timeoutQueue.poll(10, TimeUnit.SECONDS);
     } catch (InterruptedException ie) {
       fail("Unexpected interruption", ie);
       throw new AssertionError();
